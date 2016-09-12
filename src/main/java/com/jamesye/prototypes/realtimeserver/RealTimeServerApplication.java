@@ -1,8 +1,7 @@
-package com.jamesye;
+package com.jamesye.prototypes.realtimeserver;
 
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOServer;
-import com.corundumstudio.socketio.annotation.SpringAnnotationScanner;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,11 +22,6 @@ public class RealTimeServerApplication {
         config.setHostname(host);
         config.setPort(port);
         return new SocketIOServer(config);
-    }
-
-    @Bean
-    public SpringAnnotationScanner springAnnotationScanner(SocketIOServer ssrv) {
-        return new SpringAnnotationScanner(ssrv);
     }
 
     public static void main(String[] args) {

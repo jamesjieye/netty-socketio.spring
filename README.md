@@ -1,14 +1,26 @@
-#An example real-time project built with netty-socketio and Spring Boot 
+# An example real-time project 
 
-Built with [Netty-socketio](https://github.com/mrniko/netty-socketio) and Spring Boot.
+Built with 
+- [Netty-socketio](https://github.com/mrniko/netty-socketio) and 
+- Spring Boot
 
-#Usage example
+In this example, `SocketIONamespace` is used for declaring modules. 
 
-1. Run server by command
-   `mvn spring-boot:run` 
-    
-2. Or build single executable jar file with
-   `mvn package`
+This example project is inspired by the following projects.
+- https://github.com/Heit/netty-socketio-spring
+- https://github.com/mrniko/netty-socketio-demo
 
-3. Run single jar
-   `java -jar rt-server.jar`
+# Usage
+
+## Server end
+
+- Run server by command `mvn spring-boot:run`   
+- Or build single executable jar file with `mvn package` and un single jar `java -jar rt-server.jar`
+
+## Client end
+
+- Put the `/client` directory to an HTTP server. And then open it from the browser after starting the server end.
+   
+# TODO
+
+- Add test code

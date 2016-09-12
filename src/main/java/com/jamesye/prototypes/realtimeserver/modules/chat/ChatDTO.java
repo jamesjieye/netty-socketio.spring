@@ -1,4 +1,4 @@
-package com.jamesye;
+package com.jamesye.prototypes.realtimeserver.modules.chat;
 
 public class ChatDTO {
 
@@ -28,4 +28,11 @@ public class ChatDTO {
         this.message = message;
     }
 
+    @Override
+    public String toString() {
+        return "ChatDTO{" +
+                "userName='" + userName + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }
