@@ -1,8 +1,9 @@
-# An example real-time project 
+# An example of real-time chat application 
 
 Built with 
-- [Netty-socketio](https://github.com/mrniko/netty-socketio) and 
-- Spring Boot
+- [netty-socketio 1.7.17] (https://github.com/mrniko/netty-socketio) 
+- Spring Boot 2.1.1.RELEASE
+- socket.io-client 2.2.0
 
 In this example, `SocketIONamespace` is used for declaring modules. 
 
@@ -19,8 +20,8 @@ This example project is inspired by the following projects.
 
 ## Client end
 
-- Put the `/client` directory to an HTTP server. And then open it from the browser after starting the server end.
-   
-# TODO
+- Put the `/client` directory under an HTTP server. Then open it from the browser after starting the server side.
 
-- Add test code
+# License
+
+MIT
