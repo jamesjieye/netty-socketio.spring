@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
     <meta charset="utf-8"/>
     <title>Chat Client</title>
@@ -40,17 +40,17 @@
     <button type="button" onClick="sendDisconnect()" class="btn">Disconnect</button>
 </form>
 
-<script src="js/socket.io/socket.io.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/socket.io-2.2.0.js"></script>
+<script src="js/moment-2.24.0.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 
 <script>
     var userName = 'user' + Math.floor((Math.random() * 1000) + 1);
-    var socket = io('http://localhost:9092/chat');
-    socket.connect();
-
+    var socket = io('http://localhost:9092/chat?token=abc123', {
+        transports: ['websocket']
+    });
     socket.on('connect', function () {
-        output('<span class="connect-msg">Client has connected to the server!</span>');
+        output('<span class="connect-msg">The client has connected with the server. Username: ' + userName + '</span>');
     });
     socket.on('chat', function (data) {
         console.log('Received message', data);
@@ -58,6 +58,10 @@
     });
     socket.on('disconnect', function () {
         output('<span class="disconnect-msg">The client has disconnected!</span>');
+    });
+    socket.on('reconnect_attempt', (attempts) => {
+        console.log('Try to reconnect at ' + attempts + ' attempt(s).');
+        socket.io.opts.transports = ['polling', 'websocket'];
     });
 
     function sendDisconnect() {

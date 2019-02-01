@@ -1,4 +1,4 @@
-package com.jamesye.prototypes.realtimeserver;
+package com.jamesye.starter.realtimeserver;
 
 import com.corundumstudio.socketio.SocketIOServer;
 import org.springframework.beans.factory.annotation.Autowired;

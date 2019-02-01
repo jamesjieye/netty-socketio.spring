@@ -1,4 +1,4 @@
-package com.jamesye.prototypes.realtimeserver.modules.chat;
+package com.jamesye.starter.realtimeserver.modules.chat;
 
 import com.corundumstudio.socketio.HandshakeData;
 import com.corundumstudio.socketio.SocketIONamespace;
@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ChatModule {
+
+    private static final Logger log = LoggerFactory.getLogger(ChatModule.class);
 
     private final SocketIONamespace namespace;
 
@@ -44,5 +46,4 @@ public class ChatModule {
         };
     }
 
-    private static final Logger log = LoggerFactory.getLogger(ChatModule.class);
 }
