@@ -1,7 +1,7 @@
 # An example of real-time chat application 
 
 Built with 
-- [netty-socketio 1.7.17] (https://github.com/mrniko/netty-socketio) 
+- [netty-socketio 1.7.17](https://github.com/mrniko/netty-socketio) 
 - Spring Boot 2.1.1.RELEASE
 - socket.io-client 2.2.0
 
