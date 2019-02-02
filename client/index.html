@@ -47,7 +47,7 @@
 <script>
     var userName = 'user' + Math.floor((Math.random() * 1000) + 1);
     var socket = io('http://localhost:9092/chat?token=abc123', {
-        transports: ['websocket']
+        transports: ['polling', 'websocket']
     });
     socket.on('connect', function () {
         output('<span class="connect-msg">The client has connected with the server. Username: ' + userName + '</span>');
@@ -61,7 +61,6 @@
     });
     socket.on('reconnect_attempt', (attempts) => {
         console.log('Try to reconnect at ' + attempts + ' attempt(s).');
-        socket.io.opts.transports = ['polling', 'websocket'];
     });
 
     function sendDisconnect() {
