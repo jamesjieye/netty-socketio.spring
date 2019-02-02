@@ -23,10 +23,10 @@ public class ChatModule {
         this.namespace = server.addNamespace("/chat");
         this.namespace.addConnectListener(onConnected());
         this.namespace.addDisconnectListener(onDisconnected());
-        this.namespace.addEventListener("chat", ChatDTO.class, onChatReceived());
+        this.namespace.addEventListener("chat", ChatMessage.class, onChatReceived());
     }
 
-    private DataListener<ChatDTO> onChatReceived() {
+    private DataListener<ChatMessage> onChatReceived() {
         return (client, data, ackSender) -> {
             log.debug("Client[{}] - Received chat message '{}'", client.getSessionId().toString(), data);
             namespace.getBroadcastOperations().sendEvent("chat", data);

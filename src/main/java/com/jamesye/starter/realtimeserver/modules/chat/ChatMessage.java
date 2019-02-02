@@ -1,14 +1,14 @@
 package com.jamesye.starter.realtimeserver.modules.chat;
 
-public class ChatDTO {
+public class ChatMessage {
 
     private String userName;
     private String message;
 
-    public ChatDTO() {
+    public ChatMessage() {
     }
 
-    public ChatDTO(String userName, String message) {
+    public ChatMessage(String userName, String message) {
         super();
         this.userName = userName;
         this.message = message;
@@ -17,6 +17,7 @@ public class ChatDTO {
     public String getUserName() {
         return userName;
     }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -24,13 +25,14 @@ public class ChatDTO {
     public String getMessage() {
         return message;
     }
+
     public void setMessage(String message) {
         this.message = message;
     }
 
     @Override
     public String toString() {
-        return "ChatDTO{" +
+        return "ChatMessage{" +
                 "userName='" + userName + '\'' +
                 ", message='" + message + '\'' +
                 '}';
